@@ -8,7 +8,7 @@ Usage
 
 Clone the repo into your Spotify app folder
 ````
-cd ~/Spotfiy
+cd ~/Spotify
 git clone git://github.com/jamesrwhite/spotify-export.git
 ````
 
