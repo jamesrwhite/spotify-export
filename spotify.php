@@ -2,14 +2,9 @@
 
 // Via: http://www.if-not-true-then-false.com/2010/php-class-for-coloring-php-command-line-cli-scripts-output-php-output-colorizing-using-bash-shell-colors/
 require 'colour.php';
+require 'config.php';
 
-//
-// Config
-// 
-$mac_user = 'james';
-$spotify_user = 'jamesw12';
-
-$dir = "/Users/$mac_user/Library/Application\ Support/Spotify/Users/$spotify_user-user";
+$dir = "/Users/{$config['mac_user']}/Library/Application\ Support/Spotify/Users/{$config['spotify_user']}-user";
 $playlists = array();
 
 foreach (glob("$dir/playlist-*.bnk") as $file_name) {
@@ -18,7 +13,7 @@ foreach (glob("$dir/playlist-*.bnk") as $file_name) {
 
 		$file = file_get_contents($file_name);
 
-		preg_match('/spotify:user:' . $spotify_user . ':playlist:([a-zA-Z0-9]{22})/', $file, $matches);
+		preg_match('/spotify:user:' . $config['spotify_user'] . ':playlist:([a-zA-Z0-9]{22})/', $file, $matches);
 		
 		if (is_array($matches) and isset($matches[0])) {
 
@@ -43,7 +38,7 @@ exports.get = function get() {
 $colour = new Colour;
 
 // Save the file
-if (file_put_contents('spotify_app/export/playlists.js', $contents)) {
+if (file_put_contents("/Users/{$config['mac_user']}/Spotify/export/playlists.js", $contents)) {
 
 	echo $colour->getColouredString('Success!', 'green');
 	echo "\n";
