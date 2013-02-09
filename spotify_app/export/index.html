@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Export to CSV</title>
+	<link rel="stylesheet" href="sp://import/css/adam.css">
+	<style type="text/css" rel="stylesheet">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			min-height: 100%;
+		}
+
+		#loading {
+			position: absolute;
+			z-index: 2;
+			background: rgba(0, 0, 0, .5);
+			text-align: center;
+			color: #fff;
+			padding: 25px 40px;
+			margin: 25px;
+			font-size: 1.5em;
+		}
+
+		#content {
+			display: none;
+			padding: 0 25px;
+		}
+
+		h1 {
+			font-size: 2em;
+		}
+
+		h1, h2 {
+			margin: 20px 0;
+		}
+
+		textarea {
+			width: 50%;
+			height: 100px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="loading">Loading..</div>
+
+	<div id="content">
+
+		<h1>Export</h1>
+
+		<h2>JSON</h2>
+		<textarea id="json"></textarea>
+
+		<h2>Tracks</h2>
+		<ul id="tracks"></li>
+
+	</div>
+
+	<script src="sp://export/jquery.min.js"></script>
+	<script>
+
+		$(function(){
+
+			var sp = getSpotifyApi(1);
+			var spotify_to_rdio = sp.require("sp://export/export");
+
+			// Delay execution so that the page gets rendered first
+			setTimeout(function() {
+
+				spotify_to_rdio.run();
+
+			}, 1000);
+
+			$("textarea").on("click", function() {
+
+				$(this).select();
+
+			});
+
+		});
+
+	</script>
+
+</body>
+</html>

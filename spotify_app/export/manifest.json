@@ -1,0 +1,19 @@
+{
+	"BundleType": "Application",
+	"BundleIdentifier": "export",
+	"AppIcon": {
+		"36x18": "tutorial.png"
+	},
+	"AppName": {
+		"en": "Export"
+	},
+	"SupportedLanguages": [
+		"en"
+	],
+	"AcceptedLinkTypes": [
+		"playlist"
+	],
+	"VendorIdentifier": [
+		"info.geted"
+	]
+}
