@@ -8,7 +8,7 @@ Usage
 
 Clone the repo into your Spotify app folder
 ````
-cd ~/Spotiy
+cd ~/Spotfiy
 git clone git://github.com/jamesrwhite/spotify-export.git
 ````
 
@@ -35,4 +35,4 @@ Mac support only right now. Althought it should be pretty easy to make it work f
 
 Credits
 ========
-The terminal colour script is from (/http://www.if-not-true-then-false.com/2010/php-class-for-coloring-php-command-line-cli-scripts-output-php-output-colorizing-using-bash-shell-colors/
+The terminal colour script is from http://www.if-not-true-then-false.com/2010/php-class-for-coloring-php-command-line-cli-scripts-output-php-output-colorizing-using-bash-shell-colors/
