@@ -2,6 +2,7 @@ spotify-export
 ==============
 
 ~~A bit of a hack to export all your Spotify playlists as JSON.~~
+
 Export your Spotify library as JSON!
 
 Usage
@@ -25,4 +26,5 @@ After a brief bit of loading you should see something like this:
 Drawbacks
 ========
 ~~Mac support only right now. Althought it should be pretty easy to make it work for Windows/Linux. I'd imagine it just requires changing the directory structure.~~
+
 Should support all platforms now :)
