@@ -12,6 +12,9 @@ Clone the repo into your Spotify app folder
 cd ~/Spotify
 git clone git://github.com/jamesrwhite/spotify-export.git
 ````
+Now you need to set up a quick symlink
+````
+ln -s ~/Spotify/spotify-export/export ~/Spotify
 
 Now open up Spotify and paste this into the search box
 ````
