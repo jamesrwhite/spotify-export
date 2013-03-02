@@ -67,12 +67,12 @@
 		$(function(){
 
 			var sp = getSpotifyApi(1);
-			var export = sp.require("sp://export/export");
+			var spotify_export = sp.require("sp://export/export");
 
 			// Delay execution so that the page gets rendered first
 			setTimeout(function() {
 
-				export.run();
+				spotify_export.run();
 
 			}, 1000);
 
