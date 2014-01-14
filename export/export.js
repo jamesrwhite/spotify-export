@@ -4,14 +4,13 @@ exports.run = function() {
 
 	var models = sp.require('sp://import/scripts/api/models');
 	var library = models.library.tracks;
-	var tracks = [];
-	var html = "";
+	var tracks = [],
+	    track,
+	    html = "";
 
 	for (var index in library) {
 
-		var track = new models.Track(library[index].data),
-			artists;
-		
+		track = new models.Track(library[index].data);
 		tracks.push(track);
 
 		html += "<li><a href='" + track.uri + "'>" + track + "</a></li>";
