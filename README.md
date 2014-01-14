@@ -5,6 +5,11 @@ spotify-export
 
 Export your Spotify library as JSON!
 
+Requirements
+============
+
+I didn't realise this at first but it appears to be able to view this app you need to have a developer account, you can apply for one here: https://developer.spotify.com/technologies/apps/#developer-account
+
 Usage
 ======
 
