@@ -47,7 +47,7 @@
 
 <body>
 
-	<div id="loading">Loading..</div>
+	<div id="loading">Exporting your library..</div>
 
 	<div id="content">
 
@@ -66,8 +66,50 @@
 
 		$(function() {
 
-			// Delay the execution slightly to let the page finish rendering
-			setTimeout(getSpotifyApi(1).require('sp://export/export').run, 250);
+			require(['$api/library#Library'], function(Library) {
+
+				var library = Library.forCurrentUser();
+				var tracks = [],
+					artists = track_description = html = '';
+
+				library.tracks.snapshot().done(function(snapshot) {
+
+					// Sorry Spotify, no lazy loading fanciness for you, gimme all the thingz!
+					library = snapshot.toArray();
+
+					// Generate the string of HTML for the list of tracks
+					for (var track_id in library) {
+
+						// Reset the artists string
+						artists = '';
+
+						// Concatenate the artists into a CSV like string
+						for (var artist_id in library[track_id].artists) {
+
+							artists += library[track_id].artists[artist_id].name + ', ';
+
+						}
+
+						// Build the full track string
+						track_description = library[track_id].name + ' by ' + artists.slice(0, -2);
+
+						// Append the final HTML string for this track
+						html += '<li><a href="' + library[track_id].uri.decodeForLink() + '">' + track_description.decodeForHtml() + '</a></li>';
+
+					}
+
+					// Convert the track data to a massive JSON string
+					$('#json').text(JSON.stringify(library));
+
+					// Append all the tracks to the <ul>
+					$('#tracks').append(html);
+
+					// Toggle off the loading indicator
+					$('#loading, #content').toggle();
+
+				});
+
+			});
 
 			$('textarea').on('click', function() {
 
