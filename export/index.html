@@ -64,19 +64,12 @@
 	<script src="sp://export/jquery.min.js"></script>
 	<script>
 
-		$(function(){
+		$(function() {
 
-			var sp = getSpotifyApi(1);
-			var spotify_export = sp.require("sp://export/export");
+			// Delay the execution slightly to let the page finish rendering
+			setTimeout(getSpotifyApi(1).require('sp://export/export').run, 250);
 
-			// Delay execution so that the page gets rendered first
-			setTimeout(function() {
-
-				spotify_export.run();
-
-			}, 1000);
-
-			$("textarea").on("click", function() {
+			$('textarea').on('click', function() {
 
 				$(this).select();
 

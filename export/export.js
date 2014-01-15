@@ -5,20 +5,22 @@ exports.run = function() {
 	var models = sp.require('sp://import/scripts/api/models');
 	var library = models.library.tracks;
 	var tracks = [],
-	    track,
-	    html = "";
+		html = '';
 
-	for (var index in library) {
+	// Generate the string of HTML for the list of tracks
+	html = library.reduce(function(previous, current, index, array) {
 
-		track = new models.Track(library[index].data);
-		tracks.push(track);
+		return previous + '<li><a href="' + current.uri + '">' + current + '</a></li>';
 
-		html += "<li><a href='" + track.uri + "'>" + track + "</a></li>";
+	});
 
-	}
+	// Convert the track data to a massive JSON string
+	$('#json').text(JSON.stringify(library));
 
-	$("#json").text(JSON.stringify(tracks));
-	$("#tracks").append(html);
-	$("#loading, #content").toggle();
+	// Append all the tracks to the <ul>
+	$('#tracks').append(html);
+
+	// Toggle off the loading indicator
+	$('#loading, #content').toggle();
 
 };
