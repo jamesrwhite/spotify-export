@@ -4,12 +4,12 @@ spotify-export
 Export your Spotify library as JSON!
 
 Requirements
-============
+-------------
 
 To view local apps you need to have a developer account, you can apply for one here: https://developer.spotify.com/technologies/apps/#developer-account
 
 Usage
-======
+-------
 
 Create a folder called Spotify in your home directory (if you don't already have one):
 ```
