@@ -38,3 +38,5 @@ spotify:app:export
 After a brief bit of loading you should see something like this:
 
 ![Spotify Export Preview](http://i.imgur.com/mbLGGbT.png)
+
+See [sample.json](https://github.com/jamesrwhite/spotify-export/blob/master/sample.json) for an example of the JSON output.
