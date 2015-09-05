@@ -1,3 +1,7 @@
+# No longer works :(
+
+Due to Spotify [deprecating their Apps API](https://developer.spotify.com/technologies/apps/) this no longer functions.
+
 spotify-export
 ==============
 
